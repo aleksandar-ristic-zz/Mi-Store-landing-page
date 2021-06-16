@@ -7,14 +7,6 @@
 		rgba(255, 103, 9, 0.6),
 		rgba(255, 103, 9, 0.8)
 	);
-	.banner {
-		flex: 0 0 60%;
-		max-width: 60%;
-	}
-	.showcase {
-		flex: 0 0 40%;
-		max-width: 40%;
-	}
 	.banner,
 	.showcase {
 		position: relative;
@@ -24,67 +16,250 @@
 		align-items: center;
 		z-index: 5;
 	}
-	.banner::after {
-		content: '';
-		position: absolute;
-		left: -5rem;
-		bottom: -3.5rem;
-		width: 200%;
-		height: 5rem;
-		background-color: $light;
-		transform: rotateZ(-5deg);
-		z-index: -2;
-	}
-	.banner-inner {
-		h1 {
-			font-size: 4rem;
-			font-weight: 700;
-			margin-bottom: $utilSm;
-			color: $light;
-			text-transform: uppercase;
-		}
-		p {
-			color: $light;
-			font-size: $fontLg;
-			font-weight: 500;
-		}
-		small {
-			color: $light;
-		}
-		img {
-			height: 50%;
-			position: absolute;
-			bottom: 0;
-			right: -15rem;
-			z-index: -1;
-		}
-		button {
-			font-weight: 600;
-			padding: 0.75rem 1.25rem;
 
-			&:hover {
-				padding-right: 0.5rem;
-				clip-path: polygon(
-					20% 0,
-					20% 15%,
-					100% 15%,
-					100% 85%,
-					20% 85%,
-					20% 100%,
-					0% 50%
-				);
+	// left side
+	.showcase {
+		flex: 0 0 40%;
+		max-width: 40%;
+		perspective: 100rem;
+
+		.phone-case {
+			position: relative;
+			width: 60%;
+			height: 60%;
+			top: -3rem;
+			transform-style: preserve-3d;
+			transform: rotateX(-60deg) rotateY(0) rotateZ(0);
+			transition: transform 0.5s linear;
+
+			.front-side img,
+			.back-side img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
 			}
-		}
-		button.btn-outline {
-			margin-left: 1rem;
-			color: $light;
-			border: 1px solid $light;
-			background-color: transparent;
-
-			&:hover {
-				color: $orangeLight;
+			.front-side,
+			.back-side {
+				position: absolute;
+				top: 0;
+				padding: $utilLg 0;
+				transform-style: preserve-3d;
 				background-color: $light;
+				box-shadow: inset 0.1rem 0.1rem 0.1rem $fontC-100,
+					inset -0.1rem -0.1rem 0.1rem $fontC-100;
+			}
+			.front-side {
+				transform: translateZ(3rem);
+
+				&::before,
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					right: 0;
+					width: 100%;
+					height: 6rem;
+					background-color: $light;
+					background-image: url(../../img/xiaomi-transparent.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+				&::before {
+					top: 0;
+					transform: rotateX(-90deg);
+					transform-origin: top;
+				}
+				&::after {
+					bottom: 0rem;
+					transform: rotateX(90deg);
+					transform-origin: bottom;
+				}
+			}
+			.back-side {
+				transform: translateZ(-3rem);
+
+				&::before,
+				&::after {
+					content: 'Redmi 4X';
+					position: absolute;
+					top: 0;
+					width: 6rem;
+					height: 100%;
+					background-color: $light;
+					writing-mode: vertical-lr;
+					text-orientation: sideways-right;
+					color: $orangeLight;
+					font-size: $fontLg;
+					font-weight: 300;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				&::before {
+					left: 0;
+					transform: rotateY(-90deg);
+					transform-origin: left;
+				}
+				&::after {
+					right: 0;
+					transform: rotateY(90deg);
+					transform-origin: right;
+				}
 			}
 		}
+
+		.controls {
+			position: absolute;
+			bottom: 5rem;
+			width: 8rem;
+			height: 8rem;
+			border: 0.3rem solid $blueBg;
+			border-radius: 50%;
+			background-color: rgba(54, 69, 79, 0.95);
+		}
+		.controls button {
+			position: absolute;
+			width: $utilSm;
+			height: $utilSm;
+			color: $orangeLight;
+			border: none;
+			border-radius: 50%;
+			opacity: 0.6;
+			background-color: $light;
+			@include ease;
+
+			i {
+				line-height: $utilSm;
+				font-size: $fontMd;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+		.controls button:nth-child(1) {
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.controls button:nth-child(2) {
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.controls button:nth-child(3) {
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+		.controls button:nth-child(4) {
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+		.controls button:nth-child(5) {
+			top: 10%;
+			right: 10%;
+			transform: rotate(45deg);
+		}
+		.controls button:nth-child(6) {
+			bottom: 10%;
+			left: 10%;
+			transform: rotate(45deg);
+		}
+	}
+
+	// right side
+	.banner {
+		flex: 0 0 60%;
+		max-width: 60%;
+		padding-left: $utilLg;
+
+		.banner-inner {
+			h1 {
+				font-size: 4rem;
+				font-weight: 700;
+				margin-bottom: $utilSm;
+				color: $light;
+				text-transform: uppercase;
+			}
+			p {
+				color: $light;
+				font-size: $fontLg;
+				font-weight: 500;
+			}
+			small {
+				color: $light;
+			}
+			img {
+				height: 50%;
+				position: absolute;
+				bottom: 0;
+				right: -15rem;
+				z-index: -1;
+			}
+			button {
+				font-weight: 600;
+				padding: 0.75rem 1.25rem;
+
+				&:hover {
+					opacity: 1;
+					padding-right: 0.75rem;
+					clip-path: polygon(
+						20% 0,
+						20% 15%,
+						100% 15%,
+						100% 85%,
+						20% 85%,
+						20% 100%,
+						0% 50%
+					);
+				}
+			}
+			button.btn-outline {
+				margin-left: 1rem;
+				color: $light;
+				border: 1px solid $light;
+				background-color: transparent;
+
+				&:hover {
+					padding-right: 1.25rem;
+					padding-left: 0.75rem;
+					color: $orangeLight;
+					background-color: $light;
+					clip-path: polygon(
+						0 20%,
+						85% 20%,
+						85% 0,
+						100% 50%,
+						85% 100%,
+						85% 85%,
+						0 85%
+					);
+				}
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: -5rem;
+			bottom: -3.5rem;
+			width: 200%;
+			height: 5rem;
+			background-color: $light;
+			transform: rotateZ(-5deg);
+			z-index: -2;
+		}
+	}
+
+	.effect-wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }
