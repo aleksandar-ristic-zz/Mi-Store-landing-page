@@ -17,8 +17,281 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #616161;
   line-height: 1.3;
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: #ff6709;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:visited:hover {
+  color: #c85107;
+}
+
+p {
+  line-height: 1.6;
+}
+
+:is(h1, h2, h3, h4, h5) {
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+h2 {
+  color: #363636;
+}
+
+h3,
+h4 {
+  color: #4a4a4a;
+}
+
+h5 {
+  color: #616161;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 5rem;
+}
+
+.p {
+  padding: 1.25rem;
+}
+
+.px {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.btn {
+  display: block;
+  margin-top: 1.875rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 1.875rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  color: #fafafa;
+  background-color: #ff6709;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+}
+
+.btn-outline {
+  color: #ff6709;
+  background-color: #fafafa;
+  border: 1px solid #ff6709;
+}
+
+.btn-outline:hover {
+  color: #fafafa;
+  background-color: #ff6709;
+}
+
+/* *** Visibility *** */
+@media (max-width: 63.975em) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #36454f;
+  z-index: 100;
+}
+
+.header .logo img {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .navbar a:hover {
+  -webkit-transform: scale(1.05) translateY(-1px);
+          transform: scale(1.05) translateY(-1px);
+}
+
+.header .navbar > :not(:last-child) {
+  margin-right: 1rem;
+}
+
+.hero-section {
+  position: relative;
+  margin-top: 4.5rem;
+  background-image: linear-gradient(170deg, rgba(255, 103, 9, 0.8), rgba(255, 103, 9, 0.6), rgba(255, 103, 9, 0.8));
+}
+
+.hero-section .banner {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.hero-section .showcase {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.hero-section .banner,
+.hero-section .showcase {
+  position: relative;
+  min-height: calc(100vh - 4.5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+}
+
+.hero-section .banner::after {
+  content: '';
+  position: absolute;
+  left: -5rem;
+  bottom: -3.5rem;
+  width: 200%;
+  height: 5rem;
+  background-color: #fafafa;
+  -webkit-transform: rotateZ(-5deg);
+          transform: rotateZ(-5deg);
+  z-index: -2;
+}
+
+.hero-section .banner-inner h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+}
+
+.hero-section .banner-inner p {
+  color: #fafafa;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.hero-section .banner-inner small {
+  color: #fafafa;
+}
+
+.hero-section .banner-inner img {
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  right: -15rem;
+  z-index: -1;
+}
+
+.hero-section .banner-inner button {
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+}
+
+.hero-section .banner-inner button:hover {
+  padding-right: 0.5rem;
+  -webkit-clip-path: polygon(20% 0, 20% 15%, 100% 15%, 100% 85%, 20% 85%, 20% 100%, 0% 50%);
+          clip-path: polygon(20% 0, 20% 15%, 100% 15%, 100% 85%, 20% 85%, 20% 100%, 0% 50%);
+}
+
+.hero-section .banner-inner button.btn-outline {
+  margin-left: 1rem;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  background-color: transparent;
+}
+
+.hero-section .banner-inner button.btn-outline:hover {
+  color: #ff6709;
+  background-color: #fafafa;
 }

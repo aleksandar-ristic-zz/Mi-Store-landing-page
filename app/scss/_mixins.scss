@@ -27,3 +27,20 @@ $breakpoints-down: (
 		@content;
 	}
 }
+
+// transitions
+@mixin ease {
+	transition: all 0.3s ease;
+}
+
+@mixin ease-5 {
+	transition: all 0.5s ease;
+}
+
+@mixin ease-in {
+	transition: all 0.3s ease-in;
+}
+
+@mixin ease-out {
+	transition: all 0.3s ease-out;
+}

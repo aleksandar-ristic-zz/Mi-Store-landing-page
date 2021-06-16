@@ -1,0 +1,90 @@
+.hero-section {
+	position: relative;
+	margin-top: 4.5rem;
+	background-image: linear-gradient(
+		170deg,
+		rgba(255, 103, 9, 0.8),
+		rgba(255, 103, 9, 0.6),
+		rgba(255, 103, 9, 0.8)
+	);
+	.banner {
+		flex: 0 0 60%;
+		max-width: 60%;
+	}
+	.showcase {
+		flex: 0 0 40%;
+		max-width: 40%;
+	}
+	.banner,
+	.showcase {
+		position: relative;
+		min-height: calc(100vh - 4.5rem);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 5;
+	}
+	.banner::after {
+		content: '';
+		position: absolute;
+		left: -5rem;
+		bottom: -3.5rem;
+		width: 200%;
+		height: 5rem;
+		background-color: $light;
+		transform: rotateZ(-5deg);
+		z-index: -2;
+	}
+	.banner-inner {
+		h1 {
+			font-size: 4rem;
+			font-weight: 700;
+			margin-bottom: $utilSm;
+			color: $light;
+			text-transform: uppercase;
+		}
+		p {
+			color: $light;
+			font-size: $fontLg;
+			font-weight: 500;
+		}
+		small {
+			color: $light;
+		}
+		img {
+			height: 50%;
+			position: absolute;
+			bottom: 0;
+			right: -15rem;
+			z-index: -1;
+		}
+		button {
+			font-weight: 600;
+			padding: 0.75rem 1.25rem;
+
+			&:hover {
+				padding-right: 0.5rem;
+				clip-path: polygon(
+					20% 0,
+					20% 15%,
+					100% 15%,
+					100% 85%,
+					20% 85%,
+					20% 100%,
+					0% 50%
+				);
+			}
+		}
+		button.btn-outline {
+			margin-left: 1rem;
+			color: $light;
+			border: 1px solid $light;
+			background-color: transparent;
+
+			&:hover {
+				color: $orangeLight;
+				background-color: $light;
+			}
+		}
+	}
+}
