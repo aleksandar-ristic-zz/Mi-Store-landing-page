@@ -195,6 +195,32 @@ h5 {
   color: #ff6709;
 }
 
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3.25rem);
+            transform: translateY(-3.25rem);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3.25rem);
+            transform: translateY(-3.25rem);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .header {
   top: 0;
   position: fixed;
@@ -700,7 +726,7 @@ h5 {
 }
 
 .phone-section .buttons .phone-btn:nth-child(2) span {
-  left: 0.75rem;
+  left: -2.5rem;
 }
 
 .phone-section .buttons .phone-btn:hover span {

@@ -1,0 +1,10 @@
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: translateY(-3.25rem);
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

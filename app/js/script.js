@@ -52,4 +52,35 @@
 		playPause()
 	})
 	//! phone showcase end
+
+	// hover effect in phone section
+	const phoneSection = document.querySelector('.phone-section')
+	const phoneImages = phoneSection.querySelectorAll('img[class*="pocophone"]')
+	const learnMoreBtn = phoneSection.querySelector('.learn-more')
+	const startShopBtn = phoneSection.querySelector('.start-shop')
+
+	learnMoreBtn.addEventListener('mouseover', () => {
+		phoneImages[0].style.opacity = '0'
+		phoneImages[0].style.animation = ''
+		phoneImages[1].style.animation = 'slide .5s .1s ease-in forwards'
+		phoneImages[2].style.opacity = '0'
+		phoneImages[2].style.animation = ''
+	})
+	startShopBtn.addEventListener('mouseover', () => {
+		phoneImages[0].style.opacity = '0'
+		phoneImages[0].style.animation = ''
+		phoneImages[1].style.opacity = '0'
+		phoneImages[1].style.animation = ''
+		phoneImages[2].style.animation = 'slide .5s .1s ease-in forwards'
+	})
+
+	phoneSection.querySelectorAll('.phone-btn').forEach(btn => {
+		btn.addEventListener('mouseleave', () => {
+			phoneImages[0].style.animation = 'slide .5s .1s ease-in forwards'
+			phoneImages[1].style.opacity = '0'
+			phoneImages[1].style.animation = ''
+			phoneImages[2].style.opacity = '0'
+			phoneImages[2].style.animation = ''
+		})
+	})
 })()
