@@ -1,0 +1,46 @@
+.header {
+	width: 100%;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: $blueBg;
+	z-index: 100;
+
+	.navbar {
+		display: flex;
+		align-items: center;
+
+		a:hover {
+			transform: scale(1.05) translateY(-1px);
+		}
+
+		& > :not(:last-child) {
+			margin-right: 1rem;
+		}
+	}
+
+	&.static {
+		animation: downBounce 0.5s ease-in forwards;
+
+		.logo {
+			img {
+				width: 3.75rem;
+				height: 3.75rem;
+				@include ease;
+			}
+		}
+	}
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		animation: down 0.5s ease forwards;
+
+		.logo {
+			img {
+				width: 3rem;
+				height: 3rem;
+				@include ease;
+			}
+		}
+	}
+}

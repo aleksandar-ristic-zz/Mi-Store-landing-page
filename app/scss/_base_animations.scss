@@ -1,0 +1,46 @@
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: translateY(-3.25rem);
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes down {
+	from {
+		transform: translateY(-3rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 0.94;
+	}
+}
+@keyframes downBounce {
+	0% {
+		transform: translateY(-3rem) rotateZ(-3deg);
+		opacity: 0.3;
+	}
+	60% {
+		transform: translateY(0) rotateZ(0);
+		opacity: 0.8;
+	}
+	80% {
+		transform: translateY(1rem) rotateZ(2deg);
+		opacity: 0.95;
+	}
+	100% {
+		transform: translateY(0) rotateZ(0);
+		opacity: 1;
+	}
+}

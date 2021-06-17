@@ -1,6 +1,27 @@
 ;(() => {
 	'use strict'
 
+	const header = document.querySelector('.header')
+	const heroSection = document.querySelector('.hero-section')
+
+	//* Nav menu
+	window.addEventListener('scroll', () => {
+		if (
+			document.documentElement.scrollTop >= 85 &&
+			!header.classList.contains('fixed')
+		) {
+			header.classList.replace('static', 'fixed')
+			heroSection.style.marginTop = '76px'
+		}
+		if (
+			document.documentElement.scrollTop < 85 &&
+			header.classList.contains('fixed')
+		) {
+			header.classList.replace('fixed', 'static')
+			heroSection.style.marginTop = '0'
+		}
+	})
+
 	//* Phone showcase *//
 	const box = document.querySelector('.phone-case')
 	let x = 0

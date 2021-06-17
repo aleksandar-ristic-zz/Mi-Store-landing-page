@@ -1,9 +1,10 @@
-@import 'variables';
-@import 'mixins';
-@import 'globals';
-@import 'animations';
+@import 'base_variables';
+@import 'base_mixins';
+@import 'base_globals';
+@import 'base_animations';
 
-@import 'header';
-@import 'hero';
-@import 'phone';
-@import 'laptop';
+@import 'comp_header';
+@import 'comp_hero';
+@import 'comp_phones';
+@import 'comp_laptop';
+@import 'comp_watches';

@@ -244,19 +244,84 @@ h5 {
   }
 }
 
+@-webkit-keyframes down {
+  from {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.94;
+  }
+}
+
+@keyframes down {
+  from {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.94;
+  }
+}
+
+@-webkit-keyframes downBounce {
+  0% {
+    -webkit-transform: translateY(-3rem) rotateZ(-3deg);
+            transform: translateY(-3rem) rotateZ(-3deg);
+    opacity: 0.3;
+  }
+  60% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: translateY(1rem) rotateZ(2deg);
+            transform: translateY(1rem) rotateZ(2deg);
+    opacity: 0.95;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes downBounce {
+  0% {
+    -webkit-transform: translateY(-3rem) rotateZ(-3deg);
+            transform: translateY(-3rem) rotateZ(-3deg);
+    opacity: 0.3;
+  }
+  60% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: translateY(1rem) rotateZ(2deg);
+            transform: translateY(1rem) rotateZ(2deg);
+    opacity: 0.95;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+    opacity: 1;
+  }
+}
+
 .header {
-  top: 0;
-  position: fixed;
   width: 100%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #36454f;
   z-index: 100;
-}
-
-.header .logo img {
-  width: 3.75rem;
-  height: 3.75rem;
 }
 
 .header .navbar {
@@ -277,9 +342,34 @@ h5 {
   margin-right: 1rem;
 }
 
+.header.static {
+  -webkit-animation: downBounce 0.5s ease-in forwards;
+          animation: downBounce 0.5s ease-in forwards;
+}
+
+.header.static .logo img {
+  width: 3.75rem;
+  height: 3.75rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  -webkit-animation: down 0.5s ease forwards;
+          animation: down 0.5s ease forwards;
+}
+
+.header.fixed .logo img {
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .hero-section {
   position: relative;
-  margin-top: 4.5rem;
   background-image: linear-gradient(170deg, rgba(255, 103, 9, 0.8), rgba(255, 103, 9, 0.6), rgba(255, 103, 9, 0.8));
 }
 
@@ -287,6 +377,7 @@ h5 {
 .hero-section .showcase {
   position: relative;
   min-height: calc(100vh - 4.5rem);
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +387,6 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 5;
 }
 
 .hero-section .showcase {
@@ -948,4 +1038,169 @@ h5 {
   bottom: 10%;
   -webkit-animation: spin 20s linear infinite;
           animation: spin 20s linear infinite;
+}
+
+.watches-section {
+  height: 140vh;
+  padding: 20vh 0;
+}
+
+.watches-section .watches {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.watches-section .watches__bands, .watches-section .watches__cases {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.watches-section .watches__bands__img, .watches-section .watches__cases__img {
+  width: 21.875rem;
+  height: 21.875rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.watches-section .watches__cases {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.watches-section .watches__control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+}
+
+.watches-section .watches__control button {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fafafa;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(200, 81, 7, 0.45);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(20, 20, 20, 0.2), -0.1rem -0.1rem 0.2rem rgba(20, 20, 20, 0.2);
+          box-shadow: 0.1rem 0.1rem 0.2rem rgba(20, 20, 20, 0.2), -0.1rem -0.1rem 0.2rem rgba(20, 20, 20, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.watches-section .watches__control button:hover, .watches-section .watches__control button:focus {
+  background-color: #ff6709;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.watches-section .watches__control button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.watches-section .watches__control button[class$='top'] {
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.watches-section .watches__control button[class$='right'] {
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.watches-section .watches__control button[class$='bottom'] {
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.watches-section .watches__control button[class$='left'] {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.watches-section .watches__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 19rem;
+  height: 19rem;
+  border-radius: 50%;
+}
+
+.watches-section .watches__btn__buy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 0.875rem 1.5rem;
+  color: #fafafa;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #00a5b5;
+  border: none;
+  border-radius: 0.5rem;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity 0.3s 0.3s ease, -webkit-transform 0.3s 0.3s ease;
+  transition: opacity 0.3s 0.3s ease, -webkit-transform 0.3s 0.3s ease;
+  transition: opacity 0.3s 0.3s ease, transform 0.3s 0.3s ease;
+  transition: opacity 0.3s 0.3s ease, transform 0.3s 0.3s ease, -webkit-transform 0.3s 0.3s ease;
+}
+
+.watches-section .watches__btn:hover .watches__btn__buy, .watches-section .watches__btn:focus .watches__btn__buy {
+  opacity: 1;
+  -webkit-transform: scale(1) translateX(-50%);
+          transform: scale(1) translateX(-50%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.watches-section .watches__btn:hover .watches__btn__buy:hover, .watches-section .watches__btn:focus .watches__btn__buy:hover {
+  background-color: #4cc0cb;
 }
