@@ -142,11 +142,25 @@
 		position: absolute;
 	}
 	&::before {
-		top: 0;
+		top: 6rem;
 		left: 0;
+		width: 5rem;
+		height: 7.5rem;
+		background-color: transparent;
+		background-image: radial-gradient($orange 11%, transparent 11%),
+			radial-gradient($orange 10%, transparent 11%);
+		background-size: 15px 15px;
+		background-position: 0 0, 45px 45px;
+		background-repeat: repeat;
 	}
 	&::after {
 		right: 0;
 		bottom: 0;
+		width: $utilLg;
+		height: $utilLg;
+		border: 0.25rem solid $orange;
+		right: 10%;
+		bottom: 10%;
+		animation: spin 20s linear infinite;
 	}
 }
