@@ -128,3 +128,31 @@ h5 {
 		display: none;
 	}
 }
+
+/* Heading */
+.heading {
+	position: relative;
+	max-width: 100%;
+	margin-bottom: 3.75rem;
+	padding: 0 1rem;
+	text-align: center;
+	flex: 0 0 100%;
+	z-index: 5;
+
+	h2 {
+		display: inline-block;
+		font-size: $utilMd;
+		font-weight: 700;
+		color: $fontC-900;
+		text-transform: uppercase;
+		margin: 0;
+
+		&::before {
+			content: attr(data-heading);
+			display: block;
+			font-size: 1rem;
+			font-weight: 600;
+			color: $orangeLight;
+		}
+	}
+}

@@ -1,0 +1,111 @@
+.phone-section {
+	.heading {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 27.5%;
+			width: 50%;
+			height: 30vw;
+			border-radius: 1rem;
+			background-image: linear-gradient(
+				170deg,
+				rgba(255, 103, 9, 0.6),
+				rgba(255, 103, 9, 0.4),
+				rgba(255, 103, 9, 0.1)
+			);
+			transform: skewX(-50deg);
+			transform-origin: left top;
+		}
+	}
+
+	.phones-images {
+		position: relative;
+		height: 60vh;
+		width: 50vw;
+		margin: auto;
+		border-radius: 0.5rem;
+		background-image: linear-gradient(
+			170deg,
+			rgba(255, 103, 9, 0.6),
+			rgba(255, 103, 9, 0.4),
+			rgba(255, 103, 9, 0.1)
+		);
+		z-index: 5;
+
+		img {
+			position: absolute;
+			width: inherit;
+			height: inherit;
+			object-fit: contain;
+			@include ease-5;
+		}
+
+		.pocophone-2,
+		.pocophone-3 {
+			opacity: 0;
+		}
+	}
+
+	.buttons {
+		position: relative;
+		padding-top: 5rem;
+		width: fit-content;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		z-index: 10;
+
+		.phone-btn {
+			position: relative;
+			width: 3.75rem;
+			height: 3.75rem;
+			margin: 0 $utilMd;
+			color: $light;
+			border: none;
+			background-image: linear-gradient(140deg, $blueDark 40%, $blueBg);
+			border-radius: 50%;
+
+			&::after {
+				content: '';
+				display: block;
+				margin: auto;
+				width: 50%;
+				height: 50%;
+				border: 0.1rem solid $orange;
+				border-radius: 0.5rem;
+			}
+
+			span {
+				position: absolute;
+				display: inline-block;
+				top: -$utilMd;
+				width: max-content;
+				font-size: $fontMd;
+				font-weight: 400;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				color: $fontC-600;
+				transform: scale(0);
+				@include ease;
+			}
+
+			&:nth-child(1) {
+				span {
+					left: -$utilMd;
+				}
+			}
+			&:nth-child(2) {
+				span {
+					left: 0.75rem;
+				}
+			}
+
+			&:hover {
+				span {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}

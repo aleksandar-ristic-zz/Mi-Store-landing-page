@@ -165,6 +165,36 @@ h5 {
   }
 }
 
+/* Heading */
+.heading {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 3.75rem;
+  padding: 0 1rem;
+  text-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  z-index: 5;
+}
+
+.heading h2 {
+  display: inline-block;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #363636;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.heading h2::before {
+  content: attr(data-heading);
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff6709;
+}
+
 .header {
   top: 0;
   position: fixed;
@@ -491,7 +521,7 @@ h5 {
   background-color: #fafafa;
   -webkit-transform: rotateZ(-5deg);
           transform: rotateZ(-5deg);
-  z-index: -2;
+  z-index: -100;
 }
 
 .hero-section .effect-wrap {
@@ -500,4 +530,180 @@ h5 {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.hero-section .effect-wrap .effect-1 {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  top: -11rem;
+  right: -11rem;
+  border: 1rem solid #c85107;
+  border-radius: 50%;
+}
+
+.hero-section .effect-wrap .effect-1::before, .hero-section .effect-wrap .effect-1::after {
+  content: '';
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  top: -4rem;
+  right: -4rem;
+  border: 1rem solid #00a5b5;
+  border-radius: 50%;
+}
+
+.hero-section .effect-wrap .effect-1:after {
+  width: 25rem;
+  height: 25rem;
+  top: -7rem;
+  right: -7rem;
+  border: 1rem solid #36454f;
+}
+
+.hero-section .effect-wrap .effect-2 {
+  position: absolute;
+  bottom: 4em;
+  left: 2rem;
+  width: 0;
+  height: 0;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 3rem solid #c85107;
+  border-right: 1.5rem solid transparent;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.hero-section .effect-wrap .effect-2::before, .hero-section .effect-wrap .effect-2::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+}
+
+.hero-section .effect-wrap .effect-2::before {
+  bottom: -6rem;
+  left: 2rem;
+  border-bottom: 3rem solid #00a5b5;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+.hero-section .effect-wrap .effect-2::after {
+  bottom: -2rem;
+  left: 4rem;
+  border-bottom: 3rem solid #36454f;
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+}
+
+.phone-section .heading::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 27.5%;
+  width: 50%;
+  height: 30vw;
+  border-radius: 1rem;
+  background-image: linear-gradient(170deg, rgba(255, 103, 9, 0.6), rgba(255, 103, 9, 0.4), rgba(255, 103, 9, 0.1));
+  -webkit-transform: skewX(-50deg);
+          transform: skewX(-50deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+
+.phone-section .phones-images {
+  position: relative;
+  height: 60vh;
+  width: 50vw;
+  margin: auto;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(170deg, rgba(255, 103, 9, 0.6), rgba(255, 103, 9, 0.4), rgba(255, 103, 9, 0.1));
+  z-index: 5;
+}
+
+.phone-section .phones-images img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.phone-section .phones-images .pocophone-2,
+.phone-section .phones-images .pocophone-3 {
+  opacity: 0;
+}
+
+.phone-section .buttons {
+  position: relative;
+  padding-top: 5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.phone-section .buttons .phone-btn {
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin: 0 1.875rem;
+  color: #fafafa;
+  border: none;
+  background-image: linear-gradient(140deg, #00a5b5 40%, #36454f);
+  border-radius: 50%;
+}
+
+.phone-section .buttons .phone-btn::after {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  border: 0.1rem solid #c85107;
+  border-radius: 0.5rem;
+}
+
+.phone-section .buttons .phone-btn span {
+  position: absolute;
+  display: inline-block;
+  top: -1.875rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #4a4a4a;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.phone-section .buttons .phone-btn:nth-child(1) span {
+  left: -1.875rem;
+}
+
+.phone-section .buttons .phone-btn:nth-child(2) span {
+  left: 0.75rem;
+}
+
+.phone-section .buttons .phone-btn:hover span {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
