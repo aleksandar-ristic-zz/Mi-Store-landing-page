@@ -104,6 +104,7 @@ h5 {
   position: relative;
   min-height: 100vh;
   padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .p {
@@ -574,8 +575,8 @@ h5 {
   position: absolute;
   width: 20rem;
   height: 20rem;
-  top: -4rem;
-  right: -4rem;
+  top: -5rem;
+  right: 0;
   border: 1rem solid #00a5b5;
   border-radius: 50%;
 }
@@ -583,8 +584,8 @@ h5 {
 .hero-section .effect-wrap .effect-1:after {
   width: 25rem;
   height: 25rem;
-  top: -7rem;
-  right: -7rem;
+  top: -13rem;
+  right: 8rem;
   border: 1rem solid #36454f;
 }
 
@@ -732,4 +733,183 @@ h5 {
 .phone-section .buttons .phone-btn:hover span {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.laptop-section {
+  background-color: #36454f;
+}
+
+.laptop-section .heading h2 {
+  color: #fafafa;
+  padding-bottom: 5rem;
+}
+
+.laptop-section .laptop-content {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  -webkit-perspective: 6000rem;
+          perspective: 6000rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.laptop-section .laptop-images {
+  width: inherit;
+}
+
+.laptop-section .laptop-images:first-child {
+  -webkit-transform: rotateX(-80deg);
+          transform: rotateX(-80deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.laptop-section .loading {
+  position: absolute;
+  top: 2.5%;
+  width: 60%;
+  height: 85%;
+  padding-bottom: 2rem;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url(/img/laptop/laptop-bg.jpg), bottom right no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(/img/laptop/laptop-bg.jpg), bottom right no-repeat;
+  opacity: 0;
+}
+
+.laptop-section .loading__inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 2.5%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(75%, #2e2e2e), to(#4a4a4a));
+  background-image: linear-gradient(to right, #2e2e2e 75%, #4a4a4a);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.laptop-section .loading__inner img {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.laptop-section .loading__inner .progress-bar {
+  position: relative;
+  width: 13.75rem;
+  height: 0.175rem;
+  border-radius: 1.5rem;
+  background-color: #bcbcbc;
+}
+
+.laptop-section .loading__inner .progress-bar::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color: #ff6709;
+  position: absolute;
+}
+
+.laptop-section .mi-info {
+  position: absolute;
+  width: 70rem;
+  text-align: center;
+  padding-top: 2rem;
+  -webkit-transform: translateY(-2.5rem);
+          transform: translateY(-2.5rem);
+  opacity: 0;
+}
+
+.laptop-section .mi-info__heading {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.laptop-section .mi-info__price {
+  color: #bcbcbc;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.laptop-section .mi-info__btn {
+  margin: auto;
+  padding: 0.875rem 3rem;
+  color: #ff6709;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bcbcbc), to(#fafafa));
+  background-image: linear-gradient(#bcbcbc, #fafafa);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.laptop-section .mi-info__btn:hover, .laptop-section .mi-info__btn:focus {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.laptop-section .mi-info__btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.laptop-section.change .laptop-images:first-child {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  -webkit-transition: -webkit-transform 3s;
+  transition: -webkit-transform 3s;
+  transition: transform 3s;
+  transition: transform 3s, -webkit-transform 3s;
+}
+
+.laptop-section.change .loading {
+  opacity: 1;
+  -webkit-transition: opacity 1s 2s;
+  transition: opacity 1s 2s;
+}
+
+.laptop-section.change .loading__inner {
+  opacity: 0;
+  -webkit-transition: 1s 5s;
+  transition: 1s 5s;
+}
+
+.laptop-section.change .loading__inner .progress-bar::after {
+  width: 100%;
+  -webkit-transition: width 1s 3s ease-out;
+  transition: width 1s 3s ease-out;
+}
+
+.laptop-section.change .mi-info {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity 1s 6s, -webkit-transform 1.2s 6s ease-out;
+  transition: opacity 1s 6s, -webkit-transform 1.2s 6s ease-out;
+  transition: opacity 1s 6s, transform 1.2s 6s ease-out;
+  transition: opacity 1s 6s, transform 1.2s 6s ease-out, -webkit-transform 1.2s 6s ease-out;
+}
+
+.laptop-section::before, .laptop-section::after {
+  content: '';
+  position: absolute;
+}
+
+.laptop-section::before {
+  top: 0;
+  left: 0;
+}
+
+.laptop-section::after {
+  right: 0;
+  bottom: 0;
 }

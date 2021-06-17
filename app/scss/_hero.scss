@@ -278,16 +278,16 @@
 				position: absolute;
 				width: 20rem;
 				height: 20rem;
-				top: -4rem;
-				right: -4rem;
+				top: -5rem;
+				right: 0;
 				border: 1rem solid $blueDark;
 				border-radius: 50%;
 			}
 			&:after {
 				width: 25rem;
 				height: 25rem;
-				top: -7rem;
-				right: -7rem;
+				top: -13rem;
+				right: 8rem;
 				border: 1rem solid $blueBg;
 			}
 		}

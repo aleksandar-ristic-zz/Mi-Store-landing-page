@@ -53,7 +53,7 @@
 	})
 	//! phone showcase end
 
-	// hover effect in phone section
+	//* Hover effect in phone section *//
 	const phoneSection = document.querySelector('.phone-section')
 	const phoneImages = phoneSection.querySelectorAll('img[class*="pocophone"]')
 	const learnMoreBtn = phoneSection.querySelector('.learn-more')
@@ -82,5 +82,18 @@
 			phoneImages[2].style.opacity = '0'
 			phoneImages[2].style.animation = ''
 		})
+	})
+	//! phones section end
+
+	//* Laptop Section *//
+	const laptopSection = document.querySelector('.laptop-section')
+
+	window.addEventListener('scroll', () => {
+		if (
+			window.pageYOffset + window.innerHeight >=
+			laptopSection.offsetTop + (laptopSection.offsetHeight / 3) * 2
+		) {
+			laptopSection.classList.add('change')
+		}
 	})
 })()
