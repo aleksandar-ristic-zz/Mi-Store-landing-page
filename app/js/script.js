@@ -1,5 +1,5 @@
 ;(() => {
-	'use strict'
+	;('use strict')
 
 	const header = document.querySelector('.header')
 	const heroSection = document.querySelector('.hero-section')
@@ -117,4 +117,77 @@
 			laptopSection.classList.add('change')
 		}
 	})
+	//! laptop section end
+
+	//* Watch Combinations Section *//
+	const watchesSection = document.querySelector('.watches-section')
+	const watchBands = watchesSection.querySelector('.watches__cases')
+	const watchCases = watchesSection.querySelector('.watches__bands')
+
+	const watchCtrlTop = watchesSection.querySelector('.watches__control__top')
+	const watchCtrlRight = watchesSection.querySelector(
+		'.watches__control__right'
+	)
+	const watchCtrlBottom = watchesSection.querySelector(
+		'.watches__control__bottom'
+	)
+	const watchCtrlLeft = watchesSection.querySelector('.watches__control__left')
+
+	// only 1 axis for Y because no trouble with up and bottom margin
+	// 2 axis for left and right cause if I put one it either crushes at (87.rem) or skips a few beacuse we jump from marginLeft -something to marginRight that.
+	let axisY = 0
+	let axisL = 0
+	let axisR = 0
+
+	// for blocking button pressing at the last piece of band/case
+	let blockY = 4
+	let blockX = 4
+
+	//* Click controls
+	watchCtrlTop.onclick = watchUp
+	watchCtrlRight.onclick = watchRight
+	watchCtrlBottom.onclick = watchBottom
+	watchCtrlLeft.onclick = watchLeft
+
+	//* Arrow Keys
+	watchesSection.onkeydown = findKey
+
+	function findKey(e) {
+		e.preventDefault()
+		const key = e.key
+
+		switch (key) {
+			case 'ArrowUp':
+				return watchUp()
+			case 'ArrowRight':
+				return watchRight()
+			case 'ArrowDown':
+				return watchBottom()
+			case 'ArrowLeft':
+				return watchLeft()
+			default:
+				return
+		}
+	}
+
+	function watchUp() {
+		if (blockY === 0) return
+		watchBands.style.marginTop = `${(axisY -= 43.75)}rem`
+		blockY--
+	}
+	function watchRight() {
+		if (blockX === 8) return
+		watchCases.style.marginLeft = `${(axisL -= 43.75)}rem`
+		blockX++
+	}
+	function watchBottom() {
+		if (blockY === 8) return
+		watchBands.style.marginTop = `${(axisY += 43.75)}rem`
+		blockY++
+	}
+	function watchLeft() {
+		if (blockX === 0) return
+		watchCases.style.marginRight = `${(axisR -= 43.75)}rem`
+		blockX--
+	}
 })()
