@@ -90,7 +90,7 @@
 			color: $orangeLight;
 			font-size: $fontSm;
 			font-weight: 600;
-			border-radius: 0.5rem;
+			border-radius: $utilSm;
 			background-image: linear-gradient($fontC-100, $light);
 			cursor: pointer;
 			@include ease;

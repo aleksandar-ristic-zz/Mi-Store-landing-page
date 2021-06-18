@@ -190,4 +190,22 @@
 		watchCases.style.marginRight = `${(axisR -= 43.75)}rem`
 		blockX--
 	}
+	//! watches end
+
+	/* Earbuds Section */
+	const earbudsSection = document.querySelector('.earbuds-section')
+	const btn = earbudsSection.querySelectorAll('.btn')
+	const w50 = earbudsSection.querySelectorAll('.w-50')
+
+	w50.forEach((el, idx) => {
+		el.addEventListener('mouseover', () => {
+			btn[idx].style.opacity = '1'
+			btn[idx].style.transform = 'scale(1)'
+		})
+
+		el.addEventListener('mouseout', () => {
+			btn[idx].style.opacity = '0'
+			btn[idx].style.transform = 'scale(0)'
+		})
+	})
 })()

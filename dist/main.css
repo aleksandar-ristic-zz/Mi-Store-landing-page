@@ -956,7 +956,7 @@ h5 {
   color: #ff6709;
   font-size: 0.875rem;
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#bcbcbc), to(#fafafa));
   background-image: linear-gradient(#bcbcbc, #fafafa);
   cursor: pointer;
@@ -1205,4 +1205,55 @@ h5 {
 
 .watches-section .watches__btn:hover .watches__btn__buy:hover, .watches-section .watches__btn:focus .watches__btn__buy:hover {
   background-color: #4cc0cb;
+}
+
+.earbuds-section .w-50 {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.earbuds-section .w-50:nth-of-type(2) {
+  background-color: #ff6709;
+}
+
+.earbuds-section .w-50 .btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.earbuds-section .w-50 .btn-primary {
+  right: 1rem;
+}
+
+.earbuds-section .w-50 .btn-primary:hover {
+  background-color: #fafafa;
+  color: #ff6709;
+  border: 1px solid #ff6709;
+}
+
+.earbuds-section .w-50 .btn-outline {
+  left: 1rem;
+}
+
+.earbuds-section .w-50 .btn-outline:hover {
+  border: 1px solid #fafafa;
 }
