@@ -19,6 +19,7 @@
 		}
 		.btn-primary {
 			right: 1rem;
+			border: 1px solid transparent;
 
 			&:hover {
 				background-color: $light;

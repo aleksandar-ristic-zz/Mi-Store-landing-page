@@ -4,6 +4,7 @@ html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -196,6 +197,40 @@ h5 {
   color: #ff6709;
 }
 
+/* ** ** ** Back To Top Button ** ** ** */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #c85107;
+  opacity: 0.5;
+  border: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 0.2 0.2 0.2 rgba(46, 46, 46, 0.2);
+          box-shadow: 0.2 0.2 0.2 rgba(46, 46, 46, 0.2);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.back-to-top i {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: #fafafa;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
+
+.back-to-top.hide {
+  -webkit-transform: translateX(5rem);
+          transform: translateX(5rem);
+}
+
 @-webkit-keyframes slide {
   from {
     opacity: 0;
@@ -313,6 +348,32 @@ h5 {
     -webkit-transform: translateY(0) rotateZ(0);
             transform: translateY(0) rotateZ(0);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -1242,6 +1303,7 @@ h5 {
 
 .earbuds-section .w-50 .btn-primary {
   right: 1rem;
+  border: 1px solid transparent;
 }
 
 .earbuds-section .w-50 .btn-primary:hover {

@@ -3,6 +3,7 @@
 html {
 	font-size: 100%;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 *,
 *::before,
@@ -155,5 +156,35 @@ h5 {
 			font-weight: 600;
 			color: $orangeLight;
 		}
+	}
+}
+
+/* ** ** ** Back To Top Button ** ** ** */
+.back-to-top {
+	position: fixed;
+	right: $utilSm;
+	bottom: $utilSm;
+	width: $utilLg;
+	height: $utilLg;
+	background-color: $orange;
+	opacity: 0.5;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 0.2 0.2 0.2 rgba($dark, 0.2);
+	transform: translateX(0);
+	@include ease-5;
+
+	i {
+		font-size: $fontLg;
+		line-height: $fontLg;
+		color: $light;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.hide {
+		transform: translateX(5rem);
 	}
 }

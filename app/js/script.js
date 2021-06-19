@@ -11,7 +11,7 @@
 			!header.classList.contains('fixed')
 		) {
 			header.classList.replace('static', 'fixed')
-			heroSection.style.marginTop = '76px'
+			heroSection.style.marginTop = '70px'
 		}
 		if (
 			document.documentElement.scrollTop < 85 &&
@@ -207,5 +207,33 @@
 			btn[idx].style.opacity = '0'
 			btn[idx].style.transform = 'scale(0)'
 		})
+	})
+	//! earbuds end
+
+	/* Back to top Button */
+	const heroSectionHeight = heroSection.clientHeight
+	const btnBackToTop = document.querySelector('.back-to-top')
+
+	window.addEventListener('scroll', () => {
+		if (
+			document.documentElement.scrollTop >= heroSectionHeight &&
+			btnBackToTop.classList.contains('hide')
+		) {
+			btnBackToTop.classList.remove('hide')
+		}
+		if (
+			document.documentElement.scrollTop < heroSectionHeight &&
+			!btnBackToTop.classList.contains('hide')
+		) {
+			document.documentElement.style.animation = ''
+			btnBackToTop.classList.add('hide')
+		}
+	})
+
+	btnBackToTop.addEventListener('click', () => {
+		document.documentElement.style.animation = 'scroll .8s ease-out forwards'
+		document.documentElement.scrollTop = 0
+		header.classList.replace('fixed', 'static')
+		heroSection.style.marginTop = '0'
 	})
 })()
