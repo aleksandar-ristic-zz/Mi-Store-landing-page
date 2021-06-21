@@ -1319,3 +1319,112 @@ h5 {
 .earbuds-section .w-50 .btn-outline:hover {
   border: 1px solid #fafafa;
 }
+
+footer .newsletter .w-50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+footer .newsletter .w-50 h4 {
+  color: #4a4a4a;
+  font-size: 1.25rem;
+}
+
+footer .newsletter .w-50 form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer .newsletter .w-50 button {
+  margin: 0;
+  display: inline-block;
+}
+
+footer .newsletter .w-50 input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 0;
+  color: #616161;
+  border-radius: 1rem;
+  background-color: #ddd;
+}
+
+footer .newsletter .w-50 input:focus {
+  outline: 1px solid #00a5b5;
+}
+
+footer .newsletter .w-50 .social-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer .newsletter .w-50 .social-container > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+footer .newsletter .w-50 .social-container i {
+  color: #ff6709;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+footer .newsletter .w-50 .social-container i:hover {
+  color: #00a5b5;
+}
+
+footer .site-map {
+  background-color: #36454f;
+  padding: 2rem 0;
+  color: #fafafa;
+}
+
+footer .site-map .w-20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  max-width: 20%;
+}
+
+footer .site-map .w-20 h4 {
+  font-size: 1.25rem;
+  color: #fafafa;
+  font-weight: 600;
+}
+
+footer .site-map .w-20 a {
+  color: #fafafa;
+  padding: 0.75rem 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+footer .site-map .w-20 a:hover, footer .site-map .w-20 a:focus {
+  color: #00a5b5;
+}
+
+footer .site-map .w-20 p {
+  margin: 0;
+  line-height: 1.6;
+  color: #bcbcbc;
+}
