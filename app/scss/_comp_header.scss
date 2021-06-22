@@ -1,4 +1,5 @@
 .header {
+	position: relative;
 	width: 100%;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -9,7 +10,8 @@
 		display: flex;
 		align-items: center;
 
-		a:hover {
+		a:hover,
+		a:focus {
 			transform: scale(1.05) translateY(-1px);
 		}
 
@@ -41,6 +43,23 @@
 				height: 3rem;
 				@include ease;
 			}
+		}
+	}
+
+	@include breakpoint-down(sm) {
+		padding-top: 0.75rem;
+		padding-bottom: $utilMd;
+
+		.logo-container {
+			position: absolute;
+			top: 2rem;
+			padding: 0.25rem 0.35rem;
+			text-align: center;
+			background-color: $blueBg;
+			border-radius: $utilSm;
+		}
+		.row {
+			justify-content: space-evenly;
 		}
 	}
 }

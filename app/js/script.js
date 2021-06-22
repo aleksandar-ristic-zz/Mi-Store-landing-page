@@ -123,6 +123,7 @@
 	const watchesSection = document.querySelector('.watches-section')
 	const watchBands = watchesSection.querySelector('.watches__cases')
 	const watchCases = watchesSection.querySelector('.watches__bands')
+	const watchNo = watchesSection.querySelectorAll('.watches__cases__img')
 
 	const watchCtrlTop = watchesSection.querySelector('.watches__control__top')
 	const watchCtrlRight = watchesSection.querySelector(
@@ -140,9 +141,9 @@
 	let axisR = 0
 
 	// for blocking button pressing at the last piece of band/case
-	let blockY = 4
-	let blockX = 4
-
+	// we always start from the middle
+	let blockY = Math.floor(watchNo.length / 2)
+	let blockX = Math.floor(watchNo.length / 2)
 	//* Click controls
 	watchCtrlTop.onclick = watchUp
 	watchCtrlRight.onclick = watchRight
@@ -170,18 +171,20 @@
 		}
 	}
 
+	const MAX_WATCH = watchNo.length - 1
+
 	function watchUp() {
 		if (blockY === 0) return
 		watchBands.style.marginTop = `${(axisY -= 43.75)}rem`
 		blockY--
 	}
 	function watchRight() {
-		if (blockX === 8) return
+		if (blockX === MAX_WATCH) return
 		watchCases.style.marginLeft = `${(axisL -= 43.75)}rem`
 		blockX++
 	}
 	function watchBottom() {
-		if (blockY === 8) return
+		if (blockY === MAX_WATCH) return
 		watchBands.style.marginTop = `${(axisY += 43.75)}rem`
 		blockY++
 	}

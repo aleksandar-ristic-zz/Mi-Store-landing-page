@@ -189,9 +189,9 @@
 				color: $light;
 			}
 			img {
-				height: 50%;
 				position: absolute;
 				bottom: 0;
+				height: 50%;
 				right: -15rem;
 				z-index: -1;
 			}
@@ -318,6 +318,33 @@
 				left: 4rem;
 				border-bottom: 3rem solid $blueBg;
 				transform: rotate(-55deg);
+			}
+		}
+	}
+
+	@include breakpoint-down(sm) {
+		.showcase,
+		.banner {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.banner {
+			min-height: 60vh;
+			padding-left: 0;
+
+			.banner-inner {
+				h1 {
+					font-size: $fontXl;
+					margin: 0;
+				}
+				small {
+					font-size: $fontSm;
+					color: $fontC-100;
+				}
+				img {
+					right: -6rem;
+					bottom: -5rem;
+				}
 			}
 		}
 	}

@@ -163,4 +163,48 @@
 		bottom: 10%;
 		animation: spin 20s linear infinite;
 	}
+
+	@include breakpoint-down(sm) {
+		.laptop-content {
+			width: 100%;
+		}
+		.loading {
+			width: 75%;
+
+			&__inner {
+				img {
+					width: $fontLg;
+					height: $fontLg;
+				}
+				.progress-bar {
+					width: 8rem;
+				}
+			}
+		}
+		.mi-info {
+			padding-top: 0;
+
+			&__heading {
+				font-size: $utilSm;
+				font-weight: 600;
+				color: $light;
+			}
+			&__price {
+				color: $fontC-100;
+				font-size: $fontMd;
+				font-weight: 500;
+			}
+			&__btn {
+				margin: auto;
+				padding: 0.5rem $fontSm;
+				color: $orangeLight;
+				font-size: $fontSm;
+			}
+		}
+
+		&::before {
+			top: -2rem;
+			left: -1rem;
+		}
+	}
 }

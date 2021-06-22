@@ -188,3 +188,14 @@ h5 {
 		transform: translateX(5rem);
 	}
 }
+
+@include breakpoint-down(sm) {
+	body {
+		font-size: 62.5%;
+	}
+
+	.back-to-top {
+		right: 0.75rem;
+		bottom: 0.75rem;
+	}
+}

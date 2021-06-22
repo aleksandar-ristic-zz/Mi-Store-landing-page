@@ -110,4 +110,24 @@
 			}
 		}
 	}
+
+	@include breakpoint-down(sm) {
+		.watches {
+			height: 115%;
+
+			&__bands,
+			&__cases {
+				&__img {
+				}
+			}
+		}
+		.watches__control {
+			width: 19rem;
+			height: 19rem;
+		}
+		.watches__btn {
+			width: 10rem;
+			height: 10rem;
+		}
+	}
 }

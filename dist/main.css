@@ -231,6 +231,16 @@ h5 {
           transform: translateX(5rem);
 }
 
+@media (max-width: 39.975em) {
+  body {
+    font-size: 62.5%;
+  }
+  .back-to-top {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
 @-webkit-keyframes slide {
   from {
     opacity: 0;
@@ -378,6 +388,7 @@ h5 {
 }
 
 .header {
+  position: relative;
   width: 100%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -394,7 +405,8 @@ h5 {
           align-items: center;
 }
 
-.header .navbar a:hover {
+.header .navbar a:hover,
+.header .navbar a:focus {
   -webkit-transform: scale(1.05) translateY(-1px);
           transform: scale(1.05) translateY(-1px);
 }
@@ -427,6 +439,26 @@ h5 {
   height: 3rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 39.975em) {
+  .header {
+    padding-top: 0.75rem;
+    padding-bottom: 1.875rem;
+  }
+  .header .logo-container {
+    position: absolute;
+    top: 2rem;
+    padding: 0.25rem 0.35rem;
+    text-align: center;
+    background-color: #36454f;
+    border-radius: 1.5rem;
+  }
+  .header .row {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 
 .hero-section {
@@ -676,9 +708,9 @@ h5 {
 }
 
 .hero-section .banner .banner-inner img {
-  height: 50%;
   position: absolute;
   bottom: 0;
+  height: 50%;
   right: -15rem;
   z-index: -1;
 }
@@ -800,6 +832,32 @@ h5 {
           transform: rotate(-55deg);
 }
 
+@media (max-width: 39.975em) {
+  .hero-section .showcase,
+  .hero-section .banner {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .hero-section .banner {
+    min-height: 60vh;
+    padding-left: 0;
+  }
+  .hero-section .banner .banner-inner h1 {
+    font-size: 3.2rem;
+    margin: 0;
+  }
+  .hero-section .banner .banner-inner small {
+    font-size: 0.875rem;
+    color: #bcbcbc;
+  }
+  .hero-section .banner .banner-inner img {
+    right: -6rem;
+    bottom: -5rem;
+  }
+}
+
 .phone-section .heading::before {
   content: '';
   position: absolute;
@@ -906,6 +964,13 @@ h5 {
 .phone-section .buttons .phone-btn:hover span {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+@media (max-width: 39.975em) {
+  .phone-section .phones-images {
+    width: 90vw;
+    height: 50vh;
+  }
 }
 
 .laptop-section {
@@ -1101,6 +1166,45 @@ h5 {
           animation: spin 20s linear infinite;
 }
 
+@media (max-width: 39.975em) {
+  .laptop-section .laptop-content {
+    width: 100%;
+  }
+  .laptop-section .loading {
+    width: 75%;
+  }
+  .laptop-section .loading__inner img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .laptop-section .loading__inner .progress-bar {
+    width: 8rem;
+  }
+  .laptop-section .mi-info {
+    padding-top: 0;
+  }
+  .laptop-section .mi-info__heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fafafa;
+  }
+  .laptop-section .mi-info__price {
+    color: #bcbcbc;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  .laptop-section .mi-info__btn {
+    margin: auto;
+    padding: 0.5rem 0.875rem;
+    color: #ff6709;
+    font-size: 0.875rem;
+  }
+  .laptop-section::before {
+    top: -2rem;
+    left: -1rem;
+  }
+}
+
 .watches-section {
   height: 140vh;
   padding: 20vh 0;
@@ -1268,6 +1372,20 @@ h5 {
   background-color: #4cc0cb;
 }
 
+@media (max-width: 39.975em) {
+  .watches-section .watches {
+    height: 115%;
+  }
+  .watches-section .watches__control {
+    width: 19rem;
+    height: 19rem;
+  }
+  .watches-section .watches__btn {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
 .earbuds-section .w-50 {
   position: relative;
   -webkit-box-flex: 0;
@@ -1320,6 +1438,18 @@ h5 {
   border: 1px solid #fafafa;
 }
 
+@media (max-width: 39.975em) {
+  .earbuds-section {
+    padding-top: 15rem;
+  }
+  .earbuds-section .w-50 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 footer .newsletter .w-50 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
@@ -1349,7 +1479,7 @@ footer .newsletter .w-50 h4 {
   font-size: 1.25rem;
 }
 
-footer .newsletter .w-50 form {
+footer .newsletter .w-50 .form-group {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1413,8 +1543,9 @@ footer .site-map .w-20 h4 {
 }
 
 footer .site-map .w-20 a {
+  font-size: 0.875rem;
   color: #fafafa;
-  padding: 0.75rem 0;
+  line-height: 1.6;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1427,4 +1558,78 @@ footer .site-map .w-20 p {
   margin: 0;
   line-height: 1.6;
   color: #bcbcbc;
+}
+
+footer .copyright {
+  padding-top: 2rem;
+  color: #bcbcbc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .copyright a {
+  font-size: 1.125rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+footer .copyright a:hover, footer .copyright a:focus {
+  color: #00a5b5;
+}
+
+@media (max-width: 39.975em) {
+  footer .newsletter .w-50 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  footer .newsletter .social-container i {
+    font-size: 2.5rem;
+  }
+  footer .site-map .w-20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    max-width: 40%;
+    min-height: 20vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 2rem;
+  }
+  footer .site-map .w-20:last-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  footer .site-map .w-20:last-child p {
+    font-size: 1rem;
+    max-width: 80%;
+  }
+  footer .site-map .w-20:last-child ul {
+    width: 100%;
+  }
+  footer .site-map .w-20:last-child ul li {
+    width: 100%;
+    text-align: center;
+  }
+  footer .site-map .w-20:last-child ul li p:last-child {
+    color: #c85107;
+  }
 }

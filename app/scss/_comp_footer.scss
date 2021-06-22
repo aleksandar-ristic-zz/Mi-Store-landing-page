@@ -12,7 +12,7 @@ footer {
 				color: $fontC-600;
 				font-size: $fontLg;
 			}
-			form {
+			.form-group {
 				flex: 1;
 			}
 			button {
@@ -67,8 +67,9 @@ footer {
 			}
 
 			a {
+				font-size: $fontSm;
 				color: $light;
-				padding: 0.75rem 0;
+				line-height: 1.6;
 				@include ease;
 
 				&:hover,
@@ -81,6 +82,68 @@ footer {
 				margin: 0;
 				line-height: 1.6;
 				color: $fontC-100;
+			}
+		}
+	}
+
+	.copyright {
+		padding-top: 2rem;
+		color: $fontC-100;
+		@include center;
+
+		a {
+			font-size: $fontMd;
+			@include ease;
+
+			&:hover,
+			&:focus {
+				color: $blueDark;
+			}
+		}
+	}
+
+	@include breakpoint-down(sm) {
+		.newsletter {
+			.w-50 {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+			.social-container {
+				i {
+					font-size: $utilLg;
+				}
+			}
+		}
+
+		.site-map {
+			.w-20 {
+				flex: 0 0 40%;
+				max-width: 40%;
+				min-height: 20vh;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				padding-top: 2rem;
+			}
+			.w-20:last-child {
+				flex: 0 0 100%;
+				max-width: 100%;
+
+				p {
+					font-size: 1rem;
+					max-width: 80%;
+				}
+				ul {
+					width: 100%;
+					li {
+						width: 100%;
+						text-align: center;
+
+						p:last-child {
+							color: $orange;
+						}
+					}
+				}
 			}
 		}
 	}

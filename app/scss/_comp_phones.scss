@@ -108,4 +108,11 @@
 			}
 		}
 	}
+
+	@include breakpoint-down(sm) {
+		.phones-images {
+			width: 90vw;
+			height: 50vh;
+		}
+	}
 }
