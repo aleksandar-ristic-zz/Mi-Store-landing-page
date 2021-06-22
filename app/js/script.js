@@ -28,36 +28,55 @@
 	let y = 20
 	let z = 0
 	let selfControl = true
-	let interval
+	let selfInterval
+	let moveInterval
 
-	document.querySelector('.top-x-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${(x += 20)}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+	document.querySelector('.top-x-ctrl').addEventListener('mousedown', () => {
+	  moveInterval= setInterval(() => {
+			box.style.transform = `rotateX(${(x += 5)}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+		}, 100)
 	})
-	document.querySelector('.bottom-x-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${(x -= 20)}deg) rotateY(${y}deg) rotateZ(${z}deg)`
-	})
-
-	document.querySelector('.left-y-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${x}deg) rotateY(${(y -= 20)}deg) rotateZ(${z}deg)`
-	})
-	document.querySelector('.right-y-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${x}deg) rotateY(${(y += 20)}deg) rotateZ(${z}deg)`
+	document.querySelector('.bottom-x-ctrl').addEventListener('mousedown', () => {
+		moveInterval= setInterval(() => {	
+			box.style.transform = `rotateX(${(x -= 5)}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+	}, 100)
 	})
 
-	document.querySelector('.top-z-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z -= 20)}deg)`
+	document.querySelector('.left-y-ctrl').addEventListener('mousedown', () => {
+		moveInterval= setInterval(() => {	
+			box.style.transform = `rotateX(${x}deg) rotateY(${(y -= 5)}deg) rotateZ(${z}deg)`
+	}, 100)
 	})
-	document.querySelector('.bottom-z-ctrl').addEventListener('click', () => {
-		box.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z += 20)}deg)`
+	document.querySelector('.right-y-ctrl').addEventListener('mousedown', () => {
+		moveInterval= setInterval(() => {	
+			box.style.transform = `rotateX(${x}deg) rotateY(${(y += 5)}deg) rotateZ(${z}deg)`
+	}, 100)
+	})
+
+	document.querySelector('.top-z-ctrl').addEventListener('mousedown', () => {
+		moveInterval= setInterval(() => {	
+			box.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z -= 5)}deg)`
+	}, 100)
+	})
+	document.querySelector('.bottom-z-ctrl').addEventListener('mousedown', () => {
+		moveInterval= setInterval(() => {	
+			box.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z += 5)}deg)`
+	}, 100)
+	})
+
+	document.querySelectorAll('i[class$="ctrl"').forEach(btn => {
+		btn.addEventListener('mouseup', () => {
+		clearInterval(moveInterval)
+		})
 	})
 
 	const playPause = () => {
 		if (selfControl) {
-			interval = setInterval(() => {
+			selfInterval = setInterval(() => {
 				box.style.transform = `rotateX(${x}deg) rotateY(${y--}deg) rotateZ(${z}deg)`
-			}, 200)
+			}, 100)
 		} else {
-			clearInterval(interval)
+			clearInterval(selfInterval)
 		}
 	}
 

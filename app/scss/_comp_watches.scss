@@ -111,15 +111,9 @@
 		}
 	}
 
-	@include breakpoint-down(sm) {
+	@include breakpoint-down(md) {
 		.watches {
 			height: 115%;
-
-			&__bands,
-			&__cases {
-				&__img {
-				}
-			}
 		}
 		.watches__control {
 			width: 19rem;

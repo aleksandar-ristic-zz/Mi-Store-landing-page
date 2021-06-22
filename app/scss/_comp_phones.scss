@@ -109,7 +109,7 @@
 		}
 	}
 
-	@include breakpoint-down(sm) {
+	@include breakpoint-down(md) {
 		.phones-images {
 			width: 90vw;
 			height: 50vh;

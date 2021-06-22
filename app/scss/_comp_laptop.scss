@@ -164,7 +164,7 @@
 		animation: spin 20s linear infinite;
 	}
 
-	@include breakpoint-down(sm) {
+	@include breakpoint-down(md) {
 		.laptop-content {
 			width: 100%;
 		}

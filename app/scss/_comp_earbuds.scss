@@ -36,7 +36,7 @@
 		}
 	}
 
-	@include breakpoint-down(sm) {
+	@include breakpoint-down(md) {
 		padding-top: 15rem;
 		.w-50 {
 			flex: 0 0 100%;

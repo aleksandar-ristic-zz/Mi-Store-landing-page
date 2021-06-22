@@ -966,7 +966,7 @@ h5 {
           transform: scale(1);
 }
 
-@media (max-width: 39.975em) {
+@media (max-width: 63.975em) {
   .phone-section .phones-images {
     width: 90vw;
     height: 50vh;
@@ -1166,7 +1166,7 @@ h5 {
           animation: spin 20s linear infinite;
 }
 
-@media (max-width: 39.975em) {
+@media (max-width: 63.975em) {
   .laptop-section .laptop-content {
     width: 100%;
   }
@@ -1372,7 +1372,7 @@ h5 {
   background-color: #4cc0cb;
 }
 
-@media (max-width: 39.975em) {
+@media (max-width: 63.975em) {
   .watches-section .watches {
     height: 115%;
   }
@@ -1438,7 +1438,7 @@ h5 {
   border: 1px solid #fafafa;
 }
 
-@media (max-width: 39.975em) {
+@media (max-width: 63.975em) {
   .earbuds-section {
     padding-top: 15rem;
   }
@@ -1584,7 +1584,7 @@ footer .copyright a:hover, footer .copyright a:focus {
   color: #00a5b5;
 }
 
-@media (max-width: 39.975em) {
+@media (max-width: 63.975em) {
   footer .newsletter .w-50 {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -1596,9 +1596,9 @@ footer .copyright a:hover, footer .copyright a:focus {
   }
   footer .site-map .w-20 {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 40%;
-            flex: 0 0 40%;
-    max-width: 40%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
     min-height: 20vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1612,6 +1612,9 @@ footer .copyright a:hover, footer .copyright a:focus {
             flex-direction: column;
     padding-top: 2rem;
   }
+  footer .site-map .w-20:nth-child(2) h4, footer .site-map .w-20:nth-child(4) h4 {
+    margin-left: -1.875rem;
+  }
   footer .site-map .w-20:last-child {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -1619,6 +1622,7 @@ footer .copyright a:hover, footer .copyright a:focus {
     max-width: 100%;
   }
   footer .site-map .w-20:last-child p {
+    margin: auto;
     font-size: 1rem;
     max-width: 80%;
   }

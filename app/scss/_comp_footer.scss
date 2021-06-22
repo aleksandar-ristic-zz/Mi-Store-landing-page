@@ -102,7 +102,7 @@ footer {
 		}
 	}
 
-	@include breakpoint-down(sm) {
+	@include breakpoint-down(md) {
 		.newsletter {
 			.w-50 {
 				flex: 0 0 100%;
@@ -117,30 +117,39 @@ footer {
 
 		.site-map {
 			.w-20 {
-				flex: 0 0 40%;
-				max-width: 40%;
+				flex: 0 0 50%;
+				max-width: 50%;
 				min-height: 20vh;
 				display: flex;
 				align-items: center;
 				flex-direction: column;
 				padding-top: 2rem;
-			}
-			.w-20:last-child {
-				flex: 0 0 100%;
-				max-width: 100%;
 
-				p {
-					font-size: 1rem;
-					max-width: 80%;
+				&:nth-child(2),
+				&:nth-child(4) {
+					h4 {
+						margin-left: -$utilMd;
+					}
 				}
-				ul {
-					width: 100%;
-					li {
-						width: 100%;
-						text-align: center;
 
-						p:last-child {
-							color: $orange;
+				&:last-child {
+					flex: 0 0 100%;
+					max-width: 100%;
+
+					p {
+						margin: auto;
+						font-size: 1rem;
+						max-width: 80%;
+					}
+					ul {
+						width: 100%;
+						li {
+							width: 100%;
+							text-align: center;
+
+							p:last-child {
+								color: $orange;
+							}
 						}
 					}
 				}
