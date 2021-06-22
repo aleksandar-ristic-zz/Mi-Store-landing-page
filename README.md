@@ -1,6 +1,7 @@
 # Mi Store landing page
 
-[Live Version]()
+[Live Version](https://miproducts.netlify.app/)
+
 My approach on how Xiaomi's online store could look like.
 It is products landing page with sections, navigation and animations.
 
