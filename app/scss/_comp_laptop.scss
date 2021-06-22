@@ -164,7 +164,7 @@
 		animation: spin 20s linear infinite;
 	}
 
-	@include breakpoint-down(md) {
+	@include breakpoint-down(sm) {
 		.laptop-content {
 			width: 100%;
 		}
@@ -207,4 +207,48 @@
 			left: -1rem;
 		}
 	}
+	@include breakpoint-down(md) {
+		.laptop-content {
+			width: 100%;
+		}
+		.loading {
+			width: 75%;
+
+			&__inner {
+				img {
+					width: $fontXl;
+					height: $fontXl;
+				}
+				.progress-bar {
+					width: 12rem;
+				}
+			}
+		}
+		.mi-info {
+			padding-top: 0;
+
+			&__heading {
+				font-size: $utilLg;
+				font-weight: 600;
+				color: $light;
+			}
+			&__price {
+				color: $fontC-100;
+				font-size: $fontLg;
+				font-weight: 500;
+			}
+			&__btn {
+				margin: auto;
+				padding: .75rem $utilMd;
+				color: $orangeLight;
+				font-size: $fontSm;
+			}
+		}
+
+		&::before {
+			top: -2rem;
+			left: -1rem;
+		}
+	}
 }
+

@@ -241,6 +241,16 @@ h5 {
   }
 }
 
+@media (max-width: 63.975em) {
+  body {
+    font-size: 85%;
+  }
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
 @-webkit-keyframes slide {
   from {
     opacity: 0;
@@ -1166,7 +1176,7 @@ h5 {
           animation: spin 20s linear infinite;
 }
 
-@media (max-width: 63.975em) {
+@media (max-width: 39.975em) {
   .laptop-section .laptop-content {
     width: 100%;
   }
@@ -1196,6 +1206,45 @@ h5 {
   .laptop-section .mi-info__btn {
     margin: auto;
     padding: 0.5rem 0.875rem;
+    color: #ff6709;
+    font-size: 0.875rem;
+  }
+  .laptop-section::before {
+    top: -2rem;
+    left: -1rem;
+  }
+}
+
+@media (max-width: 63.975em) {
+  .laptop-section .laptop-content {
+    width: 100%;
+  }
+  .laptop-section .loading {
+    width: 75%;
+  }
+  .laptop-section .loading__inner img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .laptop-section .loading__inner .progress-bar {
+    width: 12rem;
+  }
+  .laptop-section .mi-info {
+    padding-top: 0;
+  }
+  .laptop-section .mi-info__heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fafafa;
+  }
+  .laptop-section .mi-info__price {
+    color: #bcbcbc;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .laptop-section .mi-info__btn {
+    margin: auto;
+    padding: 0.75rem 1.875rem;
     color: #ff6709;
     font-size: 0.875rem;
   }
